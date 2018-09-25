@@ -1,6 +1,13 @@
 <?php
 class ClientTest extends TestCase
 {
+
+    /*
+        If the unit testing doesn't work. Please open the route and comment out the
+        middleware that I'm using. And lastly remove the Header Authorization here in the unit testing.
+
+    */
+
     /**
      * /clients [GET]
      */

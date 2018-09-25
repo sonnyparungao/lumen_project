@@ -18,6 +18,10 @@ $router->get('/', function () use ($router) {
 
 
 
+/*
+Routes for Client
+*/
+
 $router->group(['middleware' => 'auth'], function () use ($router) {
  	$router->get('clients',  ['uses' => 'ClientController@index']);
  	$router->post('clients', ['uses' => 'ClientController@store']);
@@ -26,9 +30,9 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
  	$router->delete('clients/{id}', ['uses' => 'ClientController@destroy']);
 });
 
-
-
-
+/*
+Routes for User
+*/
 
 $router->group(['middleware' => 'auth'], function () use ($router) {
  	$router->get('users',  ['uses' => 'UsersController@index']);
@@ -37,6 +41,10 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
  	$router->put('users/{id}', ['uses' => 'UsersController@update']);
  	$router->delete('users/{id}', ['uses' => 'UsersController@destroy']);
 });
+
+/*
+Routes for User Mobile Number
+*/
 
 $router->group(['middleware' => 'auth'], function () use ($router) {
  	$router->get('userMobileNumbers',  ['uses' => 'UserMobileNumberController@index']);
@@ -51,31 +59,5 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
 
 
 
-/*
-
-$router->group(['middleware' => 'auth'], function () use ($router) {
- 	$router->get('products',  ['uses' => 'ProductsController@index']);
- 	$router->get('products/{id}', ['uses' => 'ProductsController@show']);
- 	$router->put('products/{id}', ['uses' => 'ProductsController@update']);
- 	$router->post('products', ['uses' => 'ProductsController@store']);
- 	$router->delete('products/{id}', ['uses' => 'ProductsController@destroy']);
-
-});
-
-
-
-
-$router->group(['middleware' => 'auth'], function () use ($router) {
-    $router->get('authors',  ['uses' => 'AuthorController@showAllAuthors']);
-
-    $router->get('authors/{id}', ['uses' => 'AuthorController@showOneAuthor']);
-
-    $router->post('authors', ['uses' => 'AuthorController@create']);
-
-    $router->delete('authors/{id}', ['uses' => 'AuthorController@delete']);
-
-    $router->put('authors/{id}', ['uses' => 'AuthorController@update']);
-});
-*/
 
 
