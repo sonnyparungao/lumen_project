@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersMobileNumbersTable extends Migration
+class CreateUserMobileNumbersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUsersMobileNumbersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_mobile_numbers', function (Blueprint $table) {
+        Schema::create('user_mobile_numbers', function (Blueprint $table) {
            $table->increments('mobile_number_id');
             $table->string('mobile_number')->unique();
             $table->integer('user_id');
@@ -29,6 +29,6 @@ class CreateUsersMobileNumbersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_mobile_numbers');
+        Schema::dropIfExists('user_mobile_numbers');
     }
 }
