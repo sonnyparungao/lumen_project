@@ -15,7 +15,7 @@ class CreateUserMobileNumbersTable extends Migration
     {
         Schema::create('user_mobile_numbers', function (Blueprint $table) {
            $table->increments('mobile_number_id');
-            $table->string('mobile_number')->unique();
+            $table->string('mobile_number');
             $table->integer('user_id');
             $table->tinyInteger('active')->default('1')->comment = 'active user=1, inactive=0';
             $table->timestamps();
